@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  gap: 32px;
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
