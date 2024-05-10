@@ -1,8 +1,8 @@
 import MoviesList from "../../components/MoviesList/MoviesList";
 import { fetchTrendingMovies } from "../../movies-api";
 import { useState, useEffect } from "react";
-import css from "./HomePage.module.css"
-
+import Loader from "../../components/Loader/Loader";
+import css from "./HomePage.module.css";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <div>
       <p className={css.title}>Trending now</p>
-      {loading && <b>Loading payments...</b>}
+      {loading && <Loader />}
       {error && <b>Error</b>}
       {movies.length > 0 && <MoviesList movies={movies} />}
     </div>

@@ -1,7 +1,13 @@
-ul {
-  /* list-style: none; */
+body {
   margin: 0;
-  padding: 0 16px;
+  background-color: rgba(30, 229, 136, 0.3);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 p {
@@ -18,4 +24,8 @@ h5 {
 
 button {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }

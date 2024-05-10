@@ -1,10 +1,103 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .container {
   display: flex;
   gap: 32px;
+  padding: 8px;
+  margin-left: 32px;
+  border-bottom: 1px solid #000;
 }
 
 .containerInfo {
+  max-width: 700px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  padding: 16px 0 0 0;
+}
+
+.img {
+  display: block;
+  width: 275px;
+  height: 385px;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.title {
+  font-size: 32px;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  font-weight: 700;
+  margin: 0;
+}
+
+.infoTitle {
+  font-size: 20px;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.info {
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  font-weight: 400;
+  margin: 0px;
+}
+
+.list {
+  list-style: none;
+  display: flex;
   gap: 8px;
+}
+
+.link {
+  text-decoration: none;
+  padding: 6px 12px;
+  color: #000000;
+  font-size: 18px;
+  transition: color 100ms linear;
+}
+
+.active {
+  color: #000000fd;
+  text-shadow: 2px 2px 3px rgb(7, 83, 0);
+}
+
+.navLink {
+  border-bottom: 1px solid #000;
+  padding: 16px 0;
+}
+
+.addInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-left: 32px;
+  padding-bottom: 32px;
+}
+
+.backButton {
+  background-color: #fff;
+  max-width: 90px;
+  padding: 8px;
+  border-radius: 12px;
+  letter-spacing: 0.04em;
+  color: #fafafa;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  cursor: pointer;
+}
+
+.back {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: black;
 }

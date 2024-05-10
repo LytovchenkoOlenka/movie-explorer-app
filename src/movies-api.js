@@ -8,13 +8,11 @@ const options = {
     Authorization:
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MTkzMWY0NTc3ZjRhODEwZWIwODExZmMyNDhiNjg2ZiIsInN1YiI6IjY2M2M3YjI5OWQ3ZTBjZjhjNjBlNTEwZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bj0B_b2TiLqOfWC_oH4PJadRTMjd-gWgmI9h2-rXJko",
   },
+  language: "en-US",
 };
 
 export const fetchTrendingMovies = async () => {
-  const response = await axios.get(
-    "/trending/movie/day?language=en-US",
-    options
-  );
+  const response = await axios.get("/trending/movie/day", options);
   return response.data.results;
 };
 
@@ -24,7 +22,16 @@ export const fetchMoviesByName = async (query) => {
 };
 
 export const fetchMovieById = async (movieId) => {
-  console.log(movieId);
-  const response = await axios.get(`/search/movie/${movieId}`, options);
+  const response = await axios.get(`movie/${movieId}`, options);
   return response.data;
+};
+
+export const fetchCast = async (movieId) => {
+  const response = await axios.get(`movie/${movieId}/credits`, options);
+  return response.data.cast;
+};
+
+export const fetchReview = async (movieId) => {
+  const response = await axios.get(`movie/${movieId}/reviews`, options);
+  return response.data.results;
 };

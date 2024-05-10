@@ -3,7 +3,10 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import toast, { Toaster } from "react-hot-toast";
 import { fetchMoviesByName } from "../../movies-api";
 import { useState, useEffect } from "react";
+// useMemo
 import css from "./MoviesPage.module.css";
+import Loader from "../../components/Loader/Loader";
+// import { useSearchParams } from "react-router-dom";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
@@ -11,7 +14,7 @@ export default function MoviesPage() {
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
 
-  const handleSearch = (newQuery) => {
+  const handleSubmit = (newQuery) => {
     setQuery(newQuery);
   };
 
@@ -44,8 +47,8 @@ export default function MoviesPage() {
 
   return (
     <div className={css.container}>
-      <SearchBar onSubmit={handleSearch} />
-      {loading && <b>Loading payments...</b>}
+      <SearchBar onSubmit={handleSubmit} />
+      {loading && <Loader />}
       {error && <b>Error</b>}
       {movies.length > 0 && <MoviesList movies={movies} />}
       <Toaster position="top-right" reverseOrder={false} />
