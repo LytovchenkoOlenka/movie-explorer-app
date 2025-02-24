@@ -1,8 +1,31 @@
-# React + Vite
+# Movie Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This application allows users to discover and explore trending movies. Key features include:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Trending Movies:** Displaying a list of currently popular movies.
+* **Movie Details:** Providing detailed information about each movie.
+* **Dynamic Component Loading:** On-demand loading of "Cast" and "Reviews" components without page reloads.
+* **Search Functionality:** Searching for movies by title using a search bar.
+* **Routing and State Persistence:** Preserving navigation history, ensuring seamless back-button functionality.
+* **Data Fetching:** Utilizing axios and fetch for API requests.
+
+## Technologies Used
+
+* React
+* Axios
+
+## Key Features
+
+* Displaying trending movies.
+* Detailed movie information.
+* Dynamic "Cast" and "Reviews" components.
+* Movie search by title.
+* Route history preservation.
+
+## Author
+
+* Olena Lytovchenko
+* Mail: lytovchenkohelen@gmail.com
+* GitHub: https://github.com/LytovchenkoOlenka
