@@ -1,6 +1,10 @@
-.container {
+.containerMoviesList {
   margin: 0 auto;
 }
+
+/* .main {
+  margin: 0 auto;
+} */
 
 .title {
   display: inline;

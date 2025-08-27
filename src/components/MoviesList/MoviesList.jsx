@@ -4,7 +4,7 @@ import css from "./MoviesList.module.css";
 export default function MoviesList({ movies }) {
   const location = useLocation();
   return (
-    <div className={css.container}>
+    <div className={css.containerMoviesList}>
       <ul className={css.list}>
         {movies.map((movie) => (
           <li className={css.item} key={movie.id}>

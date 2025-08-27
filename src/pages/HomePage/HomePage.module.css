@@ -1,5 +1,8 @@
+.pageContainer {
+  margin: 0 auto;
+}
+
 .title {
   font-size: 24px;
-  font-weight: 700;
-  margin: 8px 0;
+  margin-bottom: 8px;
 }
