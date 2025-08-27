@@ -1,6 +1,18 @@
-.container {
-  margin: 0 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.mainContainer {
+  width: 100%;
+  padding: 24px 12px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .mainContainer {
+    padding: 24px 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .mainContainer {
+    max-width: 1200px;
+    padding: 24px 40px;
+  }
 }
