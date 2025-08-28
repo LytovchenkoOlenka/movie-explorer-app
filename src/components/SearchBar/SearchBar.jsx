@@ -4,7 +4,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 export default function SearchBar({ onSubmit }) {
   return (
-    <div className={css.container}>
+    <div className={css.searchContainer}>
       <Formik
         initialValues={{ query: "" }}
         onSubmit={(values, actions) => {

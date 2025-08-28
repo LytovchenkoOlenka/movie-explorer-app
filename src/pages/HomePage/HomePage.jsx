@@ -1,7 +1,9 @@
 import MoviesList from "../../components/MoviesList/MoviesList";
+import Loader from "../../components/Loader/Loader";
+
 import { fetchTrendingMovies } from "../../movies-api";
 import { useState, useEffect } from "react";
-import Loader from "../../components/Loader/Loader";
+
 import css from "./HomePage.module.css";
 
 export default function HomePage() {
@@ -14,6 +16,7 @@ export default function HomePage() {
       try {
         setLoading(true);
         const data = await fetchTrendingMovies();
+        console.log(data);
         setMovies(data);
       } catch (error) {
         setError(true);
@@ -25,8 +28,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className={css.pageContainer}>
-      <h1 className={css.title}>Trending now</h1>
+    <div className={css.homePageContainer}>
+      <h2 className={css.title}>Trending now</h2>
       {loading && <Loader />}
       {error && <b>Error</b>}
       {movies.length > 0 && <MoviesList movies={movies} />}
