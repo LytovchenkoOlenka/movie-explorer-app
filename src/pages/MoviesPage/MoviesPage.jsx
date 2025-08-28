@@ -1,7 +1,7 @@
 import MoviesList from "../../components/MoviesList/MoviesList";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import toast, { Toaster } from "react-hot-toast";
-import { fetchMoviesByName } from "../../movies-api";
+import { fetchMoviesByName, fetchTopRatedMovies } from "../../movies-api";
 import { useState, useEffect, useMemo } from "react";
 //
 import css from "./MoviesPage.module.css";
@@ -10,11 +10,28 @@ import { useSearchParams } from "react-router-dom";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
+  const [moviesTop, setMoviesTop] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const userParam = searchParams.get("query") ?? "";
+
+  useEffect(() => {
+    async function getTopRatedMovies() {
+      try {
+        setLoading(true);
+        const data = await fetchTopRatedMovies();
+        console.log(data);
+        setMoviesTop(data);
+      } catch (error) {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getTopRatedMovies();
+  }, []);
 
   const changeFilter = (newFilter) => {
     searchParams.set("query", newFilter);
@@ -40,6 +57,7 @@ export default function MoviesPage() {
       } catch (error) {
         setError(true);
       } finally {
+        setMoviesTop([]);
         setLoading(false);
       }
     }
@@ -53,11 +71,27 @@ export default function MoviesPage() {
   }, [userParam, movies]);
 
   return (
-    <div className={css.container}>
+    <div className={css.moviePageContainer}>
       <SearchBar onSubmit={changeFilter} />
       {loading && <Loader />}
       {error && <b>Error</b>}
-      {movies.length > 0 && <MoviesList movies={filteredMovies} />}
+
+      {!userParam && moviesTop.length > 0 && (
+        <>
+          <h2 className={css.text}>Top Rated Movies</h2>
+          <MoviesList movies={moviesTop} />
+        </>
+      )}
+
+      {userParam && movies.length > 0 && (
+        <>
+          <p className={css.text}>
+            Movies on request <span className={css.span}>{userParam}</span>
+          </p>
+          <MoviesList movies={filteredMovies} />
+        </>
+      )}
+
       <Toaster position="top-right" reverseOrder={false} />
     </div>
   );

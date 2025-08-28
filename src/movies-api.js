@@ -13,8 +13,16 @@ const options = {
 
 export const fetchTrendingMovies = async () => {
   const response = await axios.get("/trending/movie/day", options);
+  // const response = await axios.get("/trending/tv/day", options);
   return response.data.results;
 };
+
+export const fetchTopRatedMovies = async () => {
+  const response = await axios.get("/movie/top_rated", options);
+  return response.data.results;
+};
+
+// /movie/top_rated
 
 export const fetchMoviesByName = async (query) => {
   const response = await axios.get(`/search/movie?query=${query}`, options);

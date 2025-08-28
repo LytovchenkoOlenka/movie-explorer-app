@@ -3,3 +3,13 @@
   flex-direction: column;
   gap: 12px;
 } */
+
+.span {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.text {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
