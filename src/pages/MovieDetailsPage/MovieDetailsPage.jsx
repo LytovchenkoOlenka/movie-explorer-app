@@ -40,16 +40,18 @@ export default function MovieDetailsPage() {
   };
 
   return (
-    <div className={css.mainContainer}>
+    <div className={css.detailPageContainer}>
       {loading && <Loader />}
       {error && <b>Error</b>}
-      <div className={css.backButton}>
-        <Link className={css.back} to={backLinkURLRef.current}>
-          Go back
-        </Link>
-      </div>
+
+      {/* <div className={css.backButton}> */}
+      <Link className={css.backBtn} to={backLinkURLRef.current}>
+        Go back
+      </Link>
+      {/* </div> */}
+
       {movie && (
-        <div className={css.container}>
+        <div className={css.movieInfoContainer}>
           <img
             className={css.img}
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -82,6 +84,7 @@ export default function MovieDetailsPage() {
           </div>
         </div>
       )}
+
       <div className={css.addInfo}>
         <h2 className={css.infoTitle}>Additional information</h2>
 

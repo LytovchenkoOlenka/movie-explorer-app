@@ -48,6 +48,7 @@ ul {
 
 p {
   margin: 0;
+  font-weight: 400;
 }
 
 h1,
@@ -66,7 +67,7 @@ a {
 
 a:hover {
   color: var(--primary-hover);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 button {

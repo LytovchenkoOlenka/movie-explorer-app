@@ -1,103 +1,163 @@
-.mainContainer {
+.detailPageContainer {
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-.container {
-  display: flex;
-  gap: 32px;
-  padding: 8px;
-  margin-left: 32px;
-  border-bottom: 1px solid #000;
 }
 
-.containerInfo {
-  max-width: 700px;
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  max-width: 130px;
+
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+
+  color: var(--text-primary);
+  /* color: var(--secondary-accent); */
+  background-color: transparent;
+  border: 1px solid var(--primary-accent);
+  border-radius: 4px;
+
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.backBtn:hover {
+  background-color: var(--primary-accent);
+  color: var(--secondary-accent);
+  text-decoration: none;
+}
+
+.backBtn::before {
+  content: "←";
+  font-size: 18px;
+  line-height: 1;
+}
+
+.movieInfoContainer {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 16px 0 0 0;
+  gap: 32px;
+  padding: 12px 24px;
+  background-color: var(--surface);
+  border-radius: 8px;
 }
 
 .img {
   display: block;
   width: 275px;
   height: 385px;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+  border-radius: 12px;
+  /* border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px; */
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .title {
   font-size: 32px;
-  letter-spacing: 0.03em;
-  line-height: 1;
   font-weight: 700;
-  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 0 10px rgba(var(--secondary-accent-rgb, 255, 190, 11), 0.4);
+}
+
+.userScore {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--secondary-accent);
 }
 
 .infoTitle {
   font-size: 20px;
-  letter-spacing: 0.03em;
-  line-height: 1;
-  font-weight: 700;
+  font-weight: 600;
+
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-top: 8px;
 }
 
-.info {
-  font-size: 18px;
-  letter-spacing: 0.03em;
-  line-height: 1;
-  font-weight: 400;
-  margin: 0px;
+.info,
+.release {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .list {
-  list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.link {
-  text-decoration: none;
-  padding: 6px 12px;
-  color: #000000;
-  font-size: 18px;
-  transition: color 100ms linear;
-}
-
-.active {
-  color: #000000fd;
-  text-shadow: 2px 2px 3px rgb(7, 83, 0);
-}
-
-.navLink {
-  border-bottom: 1px solid #000;
-  padding: 16px 0;
+.list .info {
+  font-size: 14px;
+  background-color: var(--surface);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--secondary-accent);
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .addInfo {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-left: 32px;
-  padding-bottom: 32px;
+
+  padding: 0 12px;
 }
 
-.backButton {
-  background-color: #fff;
-  max-width: 90px;
-  padding: 8px;
-  border-radius: 12px;
-  letter-spacing: 0.04em;
-  color: #fafafa;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0;
-  cursor: pointer;
-}
-
-.back {
+.navLink {
   display: flex;
-  text-align: center;
-  justify-content: center;
-  color: black;
+  gap: 16px;
+}
+
+.link {
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 500;
+
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+  color: var(--primary-accent);
+  border-color: var(--primary-accent);
+  background-color: rgba(var(--primary-accent-rgb, 58, 134, 255), 0.1);
+}
+
+.active {
+  color: var(--secondary-accent);
+  border-color: var(--primary-accent);
+  font-weight: 700;
+
+  box-shadow: 0 0 12px rgba(var(--primary-accent-rgb, 58, 134, 255), 0.6);
+}
+
+.addInfo .infoTitle {
+  position: relative;
+  border-bottom: none;
+}
+
+.addInfo .infoTitle::after {
+  content: "";
+
+  position: absolute;
+  bottom: 0;
+  left: -12px;
+  right: -12px;
+
+  height: 1px;
+  background-color: var(--border-color);
 }
