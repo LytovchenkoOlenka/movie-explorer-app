@@ -1,4 +1,4 @@
-/* .container {
+/* .moviePageContainer {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -7,9 +7,10 @@
 .span {
   font-weight: 700;
   font-style: italic;
+  color: var(--secondary-accent);
 }
 
-.text {
+.title {
   font-size: 24px;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }

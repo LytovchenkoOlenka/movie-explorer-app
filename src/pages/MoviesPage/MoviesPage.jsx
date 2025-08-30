@@ -78,14 +78,14 @@ export default function MoviesPage() {
 
       {!userParam && moviesTop.length > 0 && (
         <>
-          <h2 className={css.text}>Top Rated Movies</h2>
+          <h2 className={css.title}>Top Rated Movies</h2>
           <MoviesList movies={moviesTop} />
         </>
       )}
 
       {userParam && movies.length > 0 && (
         <>
-          <p className={css.text}>
+          <p className={css.title}>
             Movies on request <span className={css.span}>{userParam}</span>
           </p>
           <MoviesList movies={filteredMovies} />
