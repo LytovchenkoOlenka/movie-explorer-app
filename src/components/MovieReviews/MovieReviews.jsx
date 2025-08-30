@@ -26,11 +26,12 @@ export default function MovieReviews() {
   }, [movieId]);
 
   return (
-    <div>
+    <>
       {loading && <Loader />}
       {error && <b>Error</b>}
+
       {reviews && (
-        <ul className={css.list}>
+        <ul className={css.reviewList}>
           {reviews.map((review) => (
             <li className={css.reviewItem} key={review.id}>
               <p className={css.author}>Author: {review.author}</p>
@@ -39,6 +40,6 @@ export default function MovieReviews() {
           ))}
         </ul>
       )}
-    </div>
+    </>
   );
 }

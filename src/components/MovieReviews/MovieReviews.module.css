@@ -1,15 +1,30 @@
-.list {
+.review {
+  font-size: 16px;
+}
+
+.reviewList {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
+}
+
+.reviewItem {
+  background-color: var(--surface);
+  padding: 16px 20px;
+  border-radius: 8px;
+
+  border-left: 4px solid var(--primary-accent);
 }
 
 .author {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  padding-left: 4px;
+  margin-bottom: 12px;
 }
 
 .review {
   font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-style: italic;
 }
