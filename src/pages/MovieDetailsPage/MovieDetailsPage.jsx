@@ -44,11 +44,9 @@ export default function MovieDetailsPage() {
       {loading && <Loader />}
       {error && <b>Error</b>}
 
-      {/* <div className={css.backButton}> */}
       <Link className={css.backBtn} to={backLinkURLRef.current}>
         Go back
       </Link>
-      {/* </div> */}
 
       {movie && (
         <div className={css.movieInfoContainer}>
