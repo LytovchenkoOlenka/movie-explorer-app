@@ -1,0 +1,64 @@
+.container {
+  min-height: 70vh;
+  padding: 24px;
+  text-align: center;
+}
+
+.errorCode {
+  font-size: 100px;
+  font-weight: 800;
+  color: var(--secondary-accent);
+  line-height: 1;
+
+  text-shadow: 0 0 26px rgba(var(--primary-accent-rgb, 255, 190, 11), 0.5);
+}
+
+.message {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.homeLink {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 12px 24px;
+
+  background-color: var(--primary-accent);
+  color: var(--text-primary);
+
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+
+  box-shadow: 0 4px 15px rgba(var(--primary-accent-rgb, 58, 134, 255), 0.4);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.homeLink:hover,
+.homeLink:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(var(--primary-accent-rgb, 58, 134, 255), 0.6);
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .errorCode {
+    font-size: 150px;
+  }
+
+  .message {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .errorCode {
+    font-size: 200px;
+  }
+
+  .message {
+    font-size: 28px;
+  }
+}
