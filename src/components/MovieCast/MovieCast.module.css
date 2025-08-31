@@ -1,7 +1,7 @@
 .castList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 24px 16px; /* Відстань між рядками і колонками */
+  gap: 24px 16px;
 }
 
 .item {
@@ -18,11 +18,20 @@
   box-shadow: 0 4px 15px rgba(var(--primary-accent-rgb, 58, 134, 255), 0.4);
 }
 
-.img {
+.img,
+.imgPlaceholder {
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
   background-color: var(--border-color);
+}
+
+.imgPlaceholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: var(--surface);
 }
 
 .info {
@@ -42,13 +51,24 @@
   font-style: italic;
 }
 
-.imgPlaceholder {
-  width: 100%;
-  aspect-ratio: 2 / 3;
-  background-color: var(--border-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  color: var(--surface);
+@media screen and (min-width: 768px) {
+  .castList {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px 20px;
+  }
+
+  .actor {
+    font-size: 18px;
+  }
+
+  .character {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .castList {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 32px 24px;
+  }
 }

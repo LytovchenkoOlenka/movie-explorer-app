@@ -6,13 +6,13 @@
 
 @media screen and (min-width: 768px) {
   .mainContainer {
-    padding: 24px 32px;
+    padding: 28px 32px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .mainContainer {
     max-width: 1200px;
-    padding: 24px 40px;
+    padding: 40px 40px;
   }
 }

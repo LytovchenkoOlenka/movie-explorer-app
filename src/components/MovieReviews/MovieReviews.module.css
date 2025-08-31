@@ -1,11 +1,7 @@
-.review {
-  font-size: 16px;
-}
-
 .reviewList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 }
 
 .reviewItem {
@@ -27,4 +23,32 @@
   color: var(--text-secondary);
   line-height: 1.7;
   font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewItem {
+    padding: 20px 28px;
+  }
+
+  .author {
+    font-size: 20px;
+  }
+
+  .review {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .reviewList {
+    gap: 32px;
+  }
+
+  .reviewItem {
+    padding: 24px 32px;
+  }
+
+  .review {
+    font-size: 18px;
+  }
 }

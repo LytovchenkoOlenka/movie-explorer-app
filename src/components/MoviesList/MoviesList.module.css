@@ -18,7 +18,7 @@
 
 .item {
   padding: 12px 12px;
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: var(--surface);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
@@ -30,9 +30,9 @@
 
 .img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .posterPlaceholder {
@@ -51,8 +51,30 @@
 .title {
   display: inline;
   padding: 0 8px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-primary);
   text-shadow: 0px 0px 12px rgba(254, 225, 6, 0.7);
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .containerMoviesList {
+    max-width: 1400px;
+  }
+
+  .list {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+  }
 }

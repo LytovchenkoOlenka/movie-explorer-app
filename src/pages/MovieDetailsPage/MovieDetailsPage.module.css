@@ -16,7 +16,6 @@
   font-weight: 600;
 
   color: var(--text-primary);
-  /* color: var(--secondary-accent); */
   background-color: transparent;
   border: 1px solid var(--primary-accent);
   border-radius: 4px;
@@ -36,44 +35,10 @@
   line-height: 1;
 }
 
-.movieInfoContainer {
+.addInfo {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 12px 24px;
-  background-color: var(--surface);
-  border-radius: 8px;
-}
-
-.img {
-  display: block;
-  border-radius: 12px;
-
-  max-width: 100%;
-  /* width: 275px;     */
-  height: auto;
-
-  /* border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px; */
-}
-
-.containerInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.title {
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-shadow: 0 0 10px rgba(var(--secondary-accent-rgb, 255, 190, 11), 0.4);
-}
-
-.userScore {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--secondary-accent);
+  gap: 20px;
 }
 
 .infoTitle {
@@ -85,39 +50,9 @@
   margin-top: 8px;
 }
 
-.info,
-.release {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.list .info {
-  font-size: 14px;
-  background-color: var(--surface);
-  color: var(--text-secondary);
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 1px solid var(--secondary-accent);
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.addInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 .navLink {
   display: flex;
   gap: 16px;
-  padding: 0 12px;
 }
 
 .link {
@@ -147,6 +82,36 @@
   box-shadow: 0 0 12px rgba(var(--primary-accent-rgb, 58, 134, 255), 0.6);
 }
 
-/* * {
-  outline: 1px solid red;
-}  */
+.outletContainer {
+  min-height: 300px;
+}
+
+@media screen and (min-width: 768px) {
+  .detailPageContainer {
+    gap: 24px;
+  }
+
+  .addInfo {
+    gap: 28px;
+  }
+
+  .infoTitle {
+    font-size: 24px;
+  }
+
+  .link {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .detailPageContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 32px;
+  }
+
+  .addInfo {
+    gap: 32px;
+  }
+}
