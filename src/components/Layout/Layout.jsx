@@ -3,17 +3,6 @@ import Header from "../Header/Header";
 import css from "./Layout.module.css";
 import Loader from "../Loader/Loader";
 
-// export default function Layout({ children }) {
-//   return (
-//     <div className={css.containerBody}>
-//       <Header />
-//       <Suspense fallback={<Loader />} className={css.main}>
-//         {children}
-//       </Suspense>
-//     </div>
-//   );
-// }
-
 export default function Layout({ children }) {
   return (
     <>

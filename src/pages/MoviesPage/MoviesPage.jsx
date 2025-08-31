@@ -22,7 +22,6 @@ export default function MoviesPage() {
       try {
         setLoading(true);
         const data = await fetchTopRatedMovies();
-        console.log(data);
         setMoviesTop(data);
       } catch (error) {
         setError(true);
