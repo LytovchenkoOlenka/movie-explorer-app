@@ -10,6 +10,7 @@ import {
 import { fetchMovieById } from "../../movies-api";
 import Loader from "../../components/Loader/Loader";
 import clsx from "clsx";
+import MovieMainInfo from "../../components/MovieMainInfo/MovieMainInfo";
 
 export default function MovieDetailsPage() {
   const [error, setError] = useState(false);
@@ -82,6 +83,7 @@ export default function MovieDetailsPage() {
           </div>
         </div>
       )}
+        <MovieMainInfo movie={movie} />
 
       <div className={css.addInfo}>
         <h2 className={css.infoTitle}>Additional information</h2>
