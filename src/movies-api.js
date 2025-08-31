@@ -17,12 +17,20 @@ export const fetchTrendingMovies = async () => {
   return response.data.results;
 };
 
+// export const fetchGenresList = async () => {
+//   const response = await axios.get("/genre/movie/list", options);
+//   return response.data;
+// };
+
 export const fetchTopRatedMovies = async () => {
   const response = await axios.get("/movie/top_rated", options);
   return response.data.results;
 };
 
-// /movie/top_rated
+export const fetchUpcomingMovies = async () => {
+  const response = await axios.get("/movie/upcoming", options);
+  return response.data.results;
+};
 
 export const fetchMoviesByName = async (query) => {
   const response = await axios.get(`/search/movie?query=${query}`, options);
